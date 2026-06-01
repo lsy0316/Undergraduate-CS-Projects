@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧校园信息管理系统 - 成绩管理</title>
+    <link rel="stylesheet" href="lib/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="nav-header">
+        <div class="nav-container">
+            <div class="nav-left">
+                <h4 style="font-weight: normal;">欢迎登录智慧校园信息管理系统</h4>
+            </div>
+            <div class="nav-right">
+                <div class="notify-icon">
+                    <i class="fa fa-bell-o"></i>
+                </div>
+                <div class="setting-icon">
+                    <i class="fa fa-cog"></i>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <span>你好，廖诗雨</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 侧边栏+主内容布局 -->
+    <div class="layout-container">
+        <!-- 侧边栏导航 -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <h3>校园<span>管理系统</span></h3>
+            </div>
+            <ul class="sidebar-menu">
+                <!-- 系统首页 -->
+                <li class="menu-group">
+                    <div class="menu-title">系统首页</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="index.html">
+                                <i class="fa fa-home"></i>
+                                <span>首页看板</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 用户管理 -->
+                <li class="menu-group">
+                    <div class="menu-title">用户管理</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="login.html">
+                                <i class="fa fa-sign-in"></i>
+                                <span>系统登录</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="register.html">
+                                <i class="fa fa-user-plus"></i>
+                                <span>账号注册</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 核心管理 -->
+                <li class="menu-group">
+                    <div class="menu-title">核心管理</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="student.html">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span>学生管理</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="teacher.html">
+                                <i class="fa fa-user-md"></i>
+                                <span>教师管理</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="course.html">
+                                <i class="fa fa-book"></i>
+                                <span>课程管理</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="score.html" class="active">
+                                <i class="fa fa-bar-chart"></i>
+                                <span>成绩管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 公共服务 -->
+                <li class="menu-group">
+                    <div class="menu-title">公共服务</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="notice.html">
+                                <i class="fa fa-bullhorn"></i>
+                                <span>公告管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 系统设置 -->
+                <li class="menu-group">
+                    <div class="menu-title">系统设置</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="setting.html">
+                                <i class="fa fa-wrench"></i>
+                                <span>系统配置</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <div class="content">
+                <h2>成绩信息管理</h2>
+
+                <!-- 搜索栏 + 操作按钮 -->
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="请输入学号/姓名">
+                    <input type="text" class="search-input" placeholder="请输入课程/考试类型">
+                    <button class="search-btn">
+                        <i class="fa fa-search"></i> 搜索
+                    </button>
+                    <a href="#" class="btn btn-add">
+                        <i class="fa fa-plus"></i> 录入成绩
+                    </a>
+                    <a href="#" class="btn btn-add" style="background-color: #e67e22;">
+                        <i class="fa fa-upload"></i> 批量导入
+                    </a>
+                    <a href="#" class="btn btn-add" style="background-color: #9b59b6;">
+                        <i class="fa fa-download"></i> 生成成绩单
+                    </a>
+                </div>
+
+                <!-- 成绩信息表格 -->
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>学号</th>
+                            <th>学生姓名</th>
+                            <th>课程名称</th>
+                            <th>考试类型</th>
+                            <th>考试成绩</th>
+                            <th>成绩等级</th>
+                            <th>考试时间</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2023001001</td>
+                            <td>张三</td>
+                            <td>高中语文必修一</td>
+                            <td>期中考试</td>
+                            <td>89.5</td>
+                            <td style="color: #2ecc71;">A</td>
+                            <td>2025-11-15</td>
+                            <td>
+                                <a href="#" class="btn btn-edit">
+                                    <i class="fa fa-edit"></i> 修改
+                                </a>
+                                <a href="#" class="btn btn-delete">
+                                    <i class="fa fa-trash"></i> 删除
+                                </a>
+                                <a href="#" class="btn btn-edit" style="background-color: #e67e22;">
+                                    <i class="fa fa-file-text-o"></i> 补考
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2023001001</td>
+                            <td>张三</td>
+                            <td>高中数学必修一</td>
+                            <td>期中考试</td>
+                            <td>92.0</td>
+                            <td style="color: #2ecc71;">A</td>
+                            <td>2025-11-16</td>
+                            <td>
+                                <a href="#" class="btn btn-edit">
+                                    <i class="fa fa-edit"></i> 修改
+                                </a>
+                                <a href="#" class="btn btn-delete">
+                                    <i class="fa fa-trash"></i> 删除
+                                </a>
+                                <a href="#" class="btn btn-edit" style="background-color: #e67e22; opacity: 0.6; cursor: not-allowed;">
+                                    <i class="fa fa-file-text-o"></i> 补考
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2023001002</td>
+                            <td>李四</td>
+                            <td>高中语文必修一</td>
+                            <td>期中考试</td>
+                            <td>95.0</td>
+                            <td style="color: #3498db;">A+</td>
+                            <td>2025-11-15</td>
+                            <td>
+                                <a href="#" class="btn btn-edit">
+                                    <i class="fa fa-edit"></i> 修改
+                                </a>
+                                <a href="#" class="btn btn-delete">
+                                    <i class="fa fa-trash"></i> 删除
+                                </a>
+                                <a href="#" class="btn btn-edit" style="background-color: #e67e22; opacity: 0.6; cursor: not-allowed;">
+                                    <i class="fa fa-file-text-o"></i> 补考
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2023001002</td>
+                            <td>李四</td>
+                            <td>高中数学必修一</td>
+                            <td>期中考试</td>
+                            <td>87.0</td>
+                            <td style="color: #e67e22;">B+</td>
+                            <td>2025-11-16</td>
+                            <td>
+                                <a href="#" class="btn btn-edit">
+                                    <i class="fa fa-edit"></i> 修改
+                                </a>
+                                <a href="#" class="btn btn-delete">
+                                    <i class="fa fa-trash"></i> 删除
+                                </a>
+                                <a href="#" class="btn btn-edit" style="background-color: #e67e22; opacity: 0.6; cursor: not-allowed;">
+                                    <i class="fa fa-file-text-o"></i> 补考
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2023001003</td>
+                            <td>王五</td>
+                            <td>高中语文必修一</td>
+                            <td>期中考试</td>
+                            <td>65.0</td>
+                            <td style="color: #e74c3c;">C</td>
+                            <td>2025-11-15</td>
+                            <td>
+                                <a href="#" class="btn btn-edit">
+                                    <i class="fa fa-edit"></i> 修改
+                                </a>
+                                <a href="#" class="btn btn-delete">
+                                    <i class="fa fa-trash"></i> 删除
+                                </a>
+                                <a href="#" class="btn btn-edit" style="background-color: #e67e22;">
+                                    <i class="fa fa-file-text-o"></i> 补考
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2025 智慧校园信息管理系统 版权所有</p>
+    </footer>
+</body>
+</html>

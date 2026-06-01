@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧校园信息管理系统 - 系统设置</title>
+    <link rel="stylesheet" href="lib/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="nav-header">
+        <div class="nav-container">
+            <div class="nav-left">
+                <h4 style="font-weight: normal;">欢迎登录智慧校园信息管理系统</h4>
+            </div>
+            <div class="nav-right">
+                <div class="notify-icon">
+                    <i class="fa fa-bell-o"></i>
+                </div>
+                <div class="setting-icon">
+                    <i class="fa fa-cog"></i>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <span>超级管理员</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 侧边栏+主内容布局 -->
+    <div class="layout-container">
+        <!-- 侧边栏导航 -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <h3>校园<span>管理系统</span></h3>
+            </div>
+            <ul class="sidebar-menu">
+                <!-- 系统首页 -->
+                <li class="menu-group">
+                    <div class="menu-title">系统首页</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="index.html">
+                                <i class="fa fa-home"></i>
+                                <span>首页看板</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 用户管理 -->
+                <li class="menu-group">
+                    <div class="menu-title">用户管理</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="login.html">
+                                <i class="fa fa-sign-in"></i>
+                                <span>系统登录</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="register.html">
+                                <i class="fa fa-user-plus"></i>
+                                <span>账号注册</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 核心管理 -->
+                <li class="menu-group">
+                    <div class="menu-title">核心管理</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="student.html">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span>学生管理</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="teacher.html">
+                                <i class="fa fa-user-md"></i>
+                                <span>教师管理</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="course.html">
+                                <i class="fa fa-book"></i>
+                                <span>课程管理</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="score.html">
+                                <i class="fa fa-bar-chart"></i>
+                                <span>成绩管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 公共服务 -->
+                <li class="menu-group">
+                    <div class="menu-title">公共服务</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="notice.html">
+                                <i class="fa fa-bullhorn"></i>
+                                <span>公告管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 系统设置 -->
+                <li class="menu-group">
+                    <div class="menu-title">系统设置</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="setting.html" class="active">
+                                <i class="fa fa-wrench"></i>
+                                <span>系统配置</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <div class="content">
+                <h2>系统参数设置</h2>
+
+                <!-- 系统配置表单 -->
+                <form>
+                    <!-- 账号安全设置 -->
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="color: #2c3e50; margin-bottom: 20px; font-size: 18px;">
+                            <i class="fa fa-lock" style="color: #3498db; margin-right: 10px;"></i> 账号安全设置
+                        </h3>
+                        <div class="form-group">
+                            <label for="passwordRule">密码规则</label>
+                            <select id="passwordRule" class="form-input">
+                                <option value="6">6位及以上纯数字</option>
+                                <option value="8" selected>8位及以上字母+数字</option>
+                                <option value="10">10位及以上字母+数字+符号</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginTimeout">登录超时时间（分钟）</label>
+                            <input type="number" id="loginTimeout" class="form-input" value="30" min="5" max="120">
+                        </div>
+                        <div class="form-group">
+                            <label for="loginVerify">登录验证方式</label>
+                            <select id="loginVerify" class="form-input">
+                                <option value="none" selected>仅密码验证</option>
+                                <option value="phone">密码+手机验证码</option>
+                                <option value="email">密码+邮箱验证码</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 数据备份设置 -->
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="color: #2c3e50; margin-bottom: 20px; font-size: 18px;">
+                            <i class="fa fa-database" style="color: #3498db; margin-right: 10px;"></i> 数据备份设置
+                        </h3>
+                        <div class="form-group">
+                            <label for="backupCycle">自动备份周期</label>
+                            <select id="backupCycle" class="form-input">
+                                <option value="day" selected>每日备份</option>
+                                <option value="week">每周备份</option>
+                                <option value="month">每月备份</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="backupTime">自动备份时间</label>
+                            <input type="time" id="backupTime" class="form-input" value="02:00">
+                        </div>
+                        <div class="form-group">
+                            <label for="backupSave">备份文件保存天数</label>
+                            <input type="number" id="backupSave" class="form-input" value="30" min="7" max="90">
+                        </div>
+                        <button type="button" class="btn btn-add" style="background-color: #e67e22;">
+                            <i class="fa fa-refresh"></i> 立即备份
+                        </button>
+                    </div>
+
+                    <!-- 系统界面设置 -->
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="color: #2c3e50; margin-bottom: 20px; font-size: 18px;">
+                            <i class="fa fa-paint-brush" style="color: #3498db; margin-right: 10px;"></i> 系统界面设置
+                        </h3>
+                        <div class="form-group">
+                            <label for="themeColor">主题主色调</label>
+                            <input type="color" id="themeColor" class="form-input" value="#3498db" style="height: 40px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="pageSize">表格默认每页显示条数</label>
+                            <input type="number" id="pageSize" class="form-input" value="10" min="5" max="50">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" checked style="margin-right: 10px;"> 显示侧边栏图标
+                            </label>
+                            <label style="margin-left: 20px;">
+                                <input type="checkbox" checked style="margin-right: 10px;"> 开启页面动画
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 操作按钮 -->
+                    <div style="display: flex; gap: 15px; margin-top: 40px;">
+                        <button type="submit" class="btn btn-login" style="width: auto; padding: 10px 30px;">
+                            <i class="fa fa-save"></i> 保存设置
+                        </button>
+                        <button type="reset" class="btn btn-delete" style="width: auto; padding: 10px 30px;">
+                            <i class="fa fa-reply"></i> 重置默认
+                        </button>
+                        <button type="button" class="btn btn-add" style="width: auto; padding: 10px 30px; background-color: #9b59b6;">
+                            <i class="fa fa-history"></i> 查看操作日志
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2025 智慧校园信息管理系统 版权所有</p>
+    </footer>
+</body>
+</html>

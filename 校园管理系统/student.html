@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧校园信息管理系统 - 学生管理</title>
+    <link rel="stylesheet" href="lib/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="nav-header">
+        <div class="nav-container">
+            <div class="nav-left">
+                <h4 style="font-weight: normal;">欢迎登录智慧校园信息管理系统</h4>
+            </div>
+            <div class="nav-right">
+                <div class="notify-icon">
+                    <i class="fa fa-bell-o"></i>
+                </div>
+                <div class="setting-icon">
+                    <i class="fa fa-cog"></i>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <span>你好，廖诗雨</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 侧边栏+主内容布局 -->
+    <div class="layout-container">
+        <!-- 侧边栏导航 -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <h3>校园<span>管理系统</span></h3>
+            </div>
+            <ul class="sidebar-menu">
+                <!-- 系统首页 -->
+                <li class="menu-group">
+                    <div class="menu-title">系统首页</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="index.html">
+                                <i class="fa fa-home"></i>
+                                <span>首页看板</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 用户管理 -->
+                <li class="menu-group">
+                    <div class="menu-title">用户管理</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="login.html">
+                                <i class="fa fa-sign-in"></i>
+                                <span>系统登录</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="register.html">
+                                <i class="fa fa-user-plus"></i>
+                                <span>账号注册</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 核心管理 -->
+                <li class="menu-group">
+                    <div class="menu-title">核心管理</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="student.html" class="active">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span>学生管理</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="teacher.html">
+                                <i class="fa fa-user-md"></i>
+                                <span>教师管理</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="course.html">
+                                <i class="fa fa-book"></i>
+                                <span>课程管理</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="score.html">
+                                <i class="fa fa-bar-chart"></i>
+                                <span>成绩管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 公共服务 -->
+                <li class="menu-group">
+                    <div class="menu-title">公共服务</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="notice.html">
+                                <i class="fa fa-bullhorn"></i>
+                                <span>公告管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 系统设置 -->
+                <li class="menu-group">
+                    <div class="menu-title">系统设置</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="setting.html">
+                                <i class="fa fa-wrench"></i>
+                                <span>系统配置</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <div class="content">
+                <h2>学生信息管理</h2>
+
+                <!-- 搜索栏 + 操作按钮：按钮统一对齐 -->
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="学号/姓名">
+                    <input type="text" class="search-input" placeholder="班级/年级">
+                    <button class="search-btn">
+                        <i class="fa fa-search"></i> 搜索
+                    </button>
+                    <a href="#" class="btn btn-add">
+                        <i class="fa fa-plus"></i> 添加学生
+                    </a>
+                    <a href="#" class="btn btn-other1">
+                        <i class="fa fa-upload"></i> 批量导入
+                    </a>
+                    <a href="#" class="btn btn-other2">
+                        <i class="fa fa-download"></i> 批量导出
+                    </a>
+                </div>
+
+                <!-- 学生信息表格：操作按钮统一对齐 -->
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>学号</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>年级</th>
+                            <th>班级</th>
+                            <th>家长电话</th>
+                            <th>学籍状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2023001001</td>
+                            <td>张三</td>
+                            <td>男</td>
+                            <td>高一年级</td>
+                            <td>1班</td>
+                            <td>13800138000</td>
+                            <td style="color: #2ecc71;">在读</td>
+                            <td style="display: flex; gap: 8px;">
+                                <a href="#" class="btn btn-edit">
+                                    <i class="fa fa-edit"></i> 编辑
+                                </a>
+                                <a href="#" class="btn btn-delete">
+                                    <i class="fa fa-trash"></i> 删除
+                                </a>
+                                <a href="#" class="btn btn-other2">
+                                    <i class="fa fa-file"></i> 档案
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2023001002</td>
+                            <td>李四</td>
+                            <td>女</td>
+                            <td>高一年级</td>
+                            <td>1班</td>
+                            <td>13900139000</td>
+                            <td style="color: #2ecc71;">在读</td>
+                            <td style="display: flex; gap: 8px;">
+                                <a href="#" class="btn btn-edit">
+                                    <i class="fa fa-edit"></i> 编辑
+                                </a>
+                                <a href="#" class="btn btn-delete">
+                                    <i class="fa fa-trash"></i> 删除
+                                </a>
+                                <a href="#" class="btn btn-other2">
+                                    <i class="fa fa-file"></i> 档案
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2023001003</td>
+                            <td>王五</td>
+                            <td>男</td>
+                            <td>高一年级</td>
+                            <td>2班</td>
+                            <td>13700137000</td>
+                            <td style="color: #e67e22;">休学</td>
+                            <td style="display: flex; gap: 8px;">
+                                <a href="#" class="btn btn-edit">
+                                    <i class="fa fa-edit"></i> 编辑
+                                </a>
+                                <a href="#" class="btn btn-delete">
+                                    <i class="fa fa-trash"></i> 删除
+                                </a>
+                                <a href="#" class="btn btn-other2">
+                                    <i class="fa fa-file"></i> 档案
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2022002001</td>
+                            <td>赵六</td>
+                            <td>男</td>
+                            <td>高二年级</td>
+                            <td>3班</td>
+                            <td>13600136000</td>
+                            <td style="color: #2ecc71;">在读</td>
+                            <td style="display: flex; gap: 8px;">
+                                <a href="#" class="btn btn-edit">
+                                    <i class="fa fa-edit"></i> 编辑
+                                </a>
+                                <a href="#" class="btn btn-delete">
+                                    <i class="fa fa-trash"></i> 删除
+                                </a>
+                                <a href="#" class="btn btn-other2">
+                                    <i class="fa fa-file"></i> 档案
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2021003001</td>
+                            <td>孙七</td>
+                            <td>女</td>
+                            <td>高三年级</td>
+                            <td>2班</td>
+                            <td>13500135000</td>
+                            <td style="color: #e74c3c;">毕业</td>
+                            <td style="display: flex; gap: 8px;">
+                                <a href="#" class="btn btn-edit disabled">
+                                    <i class="fa fa-edit"></i> 编辑
+                                </a>
+                                <a href="#" class="btn btn-delete disabled">
+                                    <i class="fa fa-trash"></i> 删除
+                                </a>
+                                <a href="#" class="btn btn-other2">
+                                    <i class="fa fa-file"></i> 档案
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2025 智慧校园信息管理系统 版权所有</p>
+    </footer>
+</body>
+</html>

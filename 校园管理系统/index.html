@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧校园管理系统 - 首页</title>
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="lib/font-awesome.min.css">
+    <!-- 引入ECharts图表库（需确保文件存在） -->
+    <script src="lib/echarts.min.js"></script>
+    <!-- 引入公共样式 -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 首页专属图标颜色优化 */
+        .stats-card .icon {
+            color: #1890FF; /* 统计卡片图标主色 */
+        }
+        .chart-title i {
+            color: #1890FF; /* 图表标题图标颜色 */
+        }
+        .notify-icon i, .setting-icon i {
+            color: #F5F7FA; /* 顶部导航图标颜色 */
+        }
+        .menu-item a i {
+            color: #C6E5FF; /* 侧边栏菜单图标默认颜色 */
+        }
+        .menu-item a.active i {
+            color: #FFFFFF; /* 侧边栏选中项图标颜色 */
+        }
+        .menu-item a:hover i {
+            color: #FFFFFF; /* 侧边栏hover项图标颜色 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="nav-header">
+        <div class="nav-container">
+            <div class="nav-left">
+                <h4 style="font-weight: normal;">欢迎登录智慧校园管理系统</h4>
+            </div>
+            <div class="nav-right">
+                <div class="notify-icon">
+                    <i class="fa fa-bell-o"></i>
+                </div>
+                <div class="setting-icon">
+                    <i class="fa fa-cog"></i>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <span>你好，廖诗雨</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 侧边栏+主内容布局 -->
+    <div class="layout-container">
+        <!-- 侧边栏导航 -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <h3>智慧校园<span>管理系统</span></h3>
+            </div>
+            <ul class="sidebar-menu">
+                <!-- 系统首页 -->
+                <li class="menu-group">
+                    <div class="menu-title">系统首页</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="index.html" class="active">
+                                <i class="fa fa-home"></i>
+                                <span>首页看板</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 用户管理 -->
+                <li class="menu-group">
+                    <div class="menu-title">用户管理</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="login.html">
+                                <i class="fa fa-sign-in"></i>
+                                <span>系统登录</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="register.html">
+                                <i class="fa fa-user-plus"></i>
+                                <span>账号注册</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 核心管理 -->
+                <li class="menu-group">
+                    <div class="menu-title">核心管理</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="student.html">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span>学生管理</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="teacher.html">
+                                <i class="fa fa-user-md"></i>
+                                <span>教师管理</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="course.html">
+                                <i class="fa fa-book"></i>
+                                <span>课程管理</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="score.html">
+                                <i class="fa fa-bar-chart"></i>
+                                <span>成绩管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 公共服务 -->
+                <li class="menu-group">
+                    <div class="menu-title">公共服务</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="notice.html">
+                                <i class="fa fa-bullhorn"></i>
+                                <span>公告管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 系统设置 -->
+                <li class="menu-group">
+                    <div class="menu-title">系统设置</div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="setting.html">
+                                <i class="fa fa-wrench"></i>
+                                <span>系统配置</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 数据统计卡片 -->
+            <div class="stats-container">
+                <div class="stats-card student">
+                    <div class="icon"><i class="fa fa-graduation-cap fa-2x"></i></div>
+                    <div class="number">4862</div>
+                    <div class="label">在校学生总数</div>
+                </div>
+                <div class="stats-card teacher">
+                    <div class="icon"><i class="fa fa-user-md fa-2x"></i></div>
+                    <div class="number">328</div>
+                    <div class="label">在职教师总数</div>
+                </div>
+                <div class="stats-card course">
+                    <div class="icon"><i class="fa fa-book fa-2x"></i></div>
+                    <div class="number">126</div>
+                    <div class="label">开设课程总数</div>
+                </div>
+                <div class="stats-card notice">
+                    <div class="icon"><i class="fa fa-bullhorn fa-2x"></i></div>
+                    <div class="number">28</div>
+                    <div class="label">未读公告总数</div>
+                </div>
+            </div>
+
+            <!-- 图表容器 -->
+            <div class="charts-container">
+                <div class="chart-card">
+                    <div class="chart-title"><i class="fa fa-pie-chart"></i> 年级学生分布</div>
+                    <div class="chart-wrapper" id="gradeChart"></div>
+                </div>
+                <div class="chart-card">
+                    <div class="chart-title"><i class="fa fa-bar-chart"></i> 教师职称分布</div>
+                    <div class="chart-wrapper" id="titleChart"></div>
+                </div>
+            </div>
+
+            <!-- 最新公告+待办事项 -->
+            <div class="info-container">
+                <div class="info-card">
+                    <div class="chart-title"><i class="fa fa-bell-o"></i> 最新公告</div>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <div class="content">关于2025-2026学年第一学期期末考试安排的通知</div>
+                            <div class="time">2025-12-20</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="content">关于开展校园安全隐患排查整治工作的通知</div>
+                            <div class="time">2025-12-18</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="content">2026年元旦放假安排通知</div>
+                            <div class="time">2025-12-15</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="content">关于举办校园文化艺术节的通知</div>
+                            <div class="time">2025-12-10</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="content">教师职称评审材料提交截止通知</div>
+                            <div class="time">2025-12-05</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="chart-title"><i class="fa fa-tasks"></i> 待办事项</div>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <div class="content">审核学生转学申请（3条待审核）</div>
+                            <div class="status pending">待处理</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="content">审核教师调课申请（2条待审核）</div>
+                            <div class="status pending">待处理</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="content">生成2025年秋季学期教务报表</div>
+                            <div class="status pending">待处理</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="content">备份系统数据</div>
+                            <div class="status completed">已完成</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="content">更新学生学籍信息</div>
+                            <div class="status completed">已完成</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2025 智慧校园管理系统 版权所有</p>
+    </footer>
+
+    <!-- 图表初始化脚本 -->
+    <script>
+        // 确保DOM加载完成后初始化图表
+        window.onload = function() {
+            // 年级分布饼图
+            var gradeChart = echarts.init(document.getElementById('gradeChart'));
+            gradeChart.setOption({
+                title: {
+                    text: '年级学生分布',
+                    left: 'center',
+                    textStyle: { color: '#262626' }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{b}: {c}人 ({d}%)'
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    textStyle: { color: '#595959' }
+                },
+                series: [
+                    {
+                        name: '学生数量',
+                        type: 'pie',
+                        radius: ['40%', '70%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: {
+                            borderRadius: 10,
+                            borderColor: '#FFFFFF',
+                            borderWidth: 2
+                        },
+                        label: { show: false, position: 'center' },
+                        emphasis: {
+                            label: { show: true, fontSize: 20, fontWeight: 'bold', color: '#262626' }
+                        },
+                        labelLine: { show: false },
+                        // 匹配系统配色
+                        data: [
+                            { value: 1256, name: '高一年级', itemStyle: { color: '#1890FF' } },
+                            { value: 1189, name: '高二年级', itemStyle: { color: '#40A9FF' } },
+                            { value: 1028, name: '高三年级', itemStyle: { color: '#096DD9' } },
+                            { value: 865, name: '初一年级', itemStyle: { color: '#91D5FF' } },
+                            { value: 326, name: '初二年级', itemStyle: { color: '#B7EBFF' } },
+                            { value: 198, name: '初三年级', itemStyle: { color: '#E6F7FF' } }
+                        ]
+                    }
+                ]
+            });
+
+            // 教师职称柱状图
+            var titleChart = echarts.init(document.getElementById('titleChart'));
+            titleChart.setOption({
+                title: {
+                    text: '教师职称分布',
+                    left: 'center',
+                    textStyle: { color: '#262626' }
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { type: 'shadow' },
+                    formatter: '{b}: {c}人'
+                },
+                grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+                xAxis: {
+                    type: 'category',
+                    data: ['正高级', '高级', '一级', '二级', '三级'],
+                    axisLine: { lineStyle: { color: '#E8E8E8' } },
+                    axisLabel: { color: '#595959' }
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLine: { lineStyle: { color: '#E8E8E8' } },
+                    axisLabel: { color: '#595959' },
+                    splitLine: { lineStyle: { color: '#F5F7FA' } }
+                },
+                series: [
+                    {
+                        name: '教师数量',
+                        type: 'bar',
+                        barWidth: '60%',
+                        // 蓝色渐变配色
+                        itemStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                { offset: 0, color: '#1890FF' },
+                                { offset: 1, color: '#40A9FF' }
+                            ])
+                        },
+                        data: [28, 86, 125, 68, 21]
+                    }
+                ]
+            });
+
+            // 窗口大小变化时重置图表
+            window.addEventListener('resize', function() {
+                gradeChart.resize();
+                titleChart.resize();
+            });
+        }
+    </script>
+</body>
+</html>
