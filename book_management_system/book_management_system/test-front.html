@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>测试图书管理系统</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+    .result { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+    .success { background-color: #e8f5e9; border-color: #4caf50; }
+    .error { background-color: #ffebee; border-color: #f44336; }
+    button { padding: 10px 20px; background-color: #2196f3; color: white; border: none; cursor: pointer; }
+    button:hover { background-color: #1976d2; }
+  </style>
+</head>
+<body>
+  <h1>测试图书管理系统 API</h1>
+  
+  <button onclick="testGetBooks()">获取图书列表</button>
+  <button onclick="testAddBook()">添加图书</button>
+  
+  <div id="result" class="result"></div>
+
+  <script>
+    async function testGetBooks() {
+      const result = document.getElementById('result');
+      try {
+        const response = await fetch('http://localhost:3001/api/books');
+        const data = await response.json();
+        result.innerHTML = `<h3>✅ 获取成功</h3><pre>${JSON.stringify(data, null, 2)}</pre>`;
+        result.className = 'result success';
+      } catch (error) {
+        result.innerHTML = `<h3>❌ 获取失败</h3><p>${error.message}</p>`;
+        result.className = 'result error';
+      }
+    }
+
+    async function testAddBook() {
+      const result = document.getElementById('result');
+      try {
+        const newBook = {
+          title: '测试图书',
+          author: '测试作者',
+          isbn: '9781234567899',
+          price: 29.99,
+          category: '测试',
+          description: '这是一本测试图书',
+          published_date: '2024-01-01'
+        };
+        
+        const response = await fetch('http://localhost:3001/api/books', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newBook)
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          result.innerHTML = `<h3>✅ 添加成功</h3><pre>${JSON.stringify(data, null, 2)}</pre>`;
+          result.className = 'result success';
+        } else {
+          result.innerHTML = `<h3>❌ 添加失败 (状态码: ${response.status})</h3><pre>${JSON.stringify(data, null, 2)}</pre>`;
+          result.className = 'result error';
+        }
+      } catch (error) {
+        result.innerHTML = `<h3>❌ 添加失败</h3><p>${error.message}</p>`;
+        result.className = 'result error';
+      }
+    }
+  </script>
+</body>
+</html>
