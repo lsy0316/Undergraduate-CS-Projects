@@ -1,4 +1,4 @@
-# 🚀 Algorithm-questions
+# 🚀 Undergraduate-CS-Projects
 
 <p align="center">
   <img src="https://img.shields.io/badge/Language-C%2FC%2B%2B-blue">
