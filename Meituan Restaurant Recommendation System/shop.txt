@@ -1,0 +1,71 @@
+shoptype: Chinese
+shopId: 1
+shopName: LaoWangHome
+shopPassword: 123456
+avgScore: 4.5
+avePrice: 35.0
+address: WenHua Road 123
+phone: 13800138000
+
+shoptype: Sichuan
+shopId: 2
+shopName: ChuanWeiXuan
+shopPassword: 654321
+avgScore: 4.8
+avePrice: 42.0
+address: JianShe Street 88
+phone: 13900139000
+
+shoptype: Western
+shopId: 3
+shopName: Vienna
+shopPassword: 888888
+avgScore: 4.6
+avePrice: 88.0
+address: ZhongShan Road 168
+phone: 13600136000
+
+shoptype: HotPot
+shopId: 4
+shopName: ChongQingHotPot
+shopPassword: 111111
+avgScore: 4.9
+avePrice: 55.0
+address: BinJiang Road 256
+phone: 13700137000
+
+shoptype: Japanese
+shopId: 5
+shopName: HeFeng
+shopPassword: 222222
+avgScore: 4.4
+avePrice: 68.0
+address: ShangYe Street 66
+phone: 13500135000
+
+shoptype: FastFood
+shopId: 6
+shopName: McDonalds
+shopPassword: 333333
+avgScore: 4.2
+avePrice: 25.0
+address: ZhongXin Square 1
+phone: 13400134000
+
+shoptype: Cantonese
+shopId: 7
+shopName: YueGang
+shopPassword: 444444
+avgScore: 4.7
+avePrice: 50.0
+address: DongFeng Road 188
+phone: 13300133000
+
+shoptype: BBQ
+shopId: 8
+shopName: YeLaiXiang
+shopPassword: 555555
+avgScore: 4.3
+avePrice: 40.0
+address: YeShi Street 58
+phone: 13200132000

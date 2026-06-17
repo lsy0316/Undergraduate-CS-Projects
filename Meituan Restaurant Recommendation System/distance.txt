@@ -1,0 +1,17 @@
+University LaoWangHome 1.5
+University ChuanWeiXuan 2.3
+University Vienna 3.0
+University ChongQingHotPot 2.8
+University HeFeng 1.8
+University McDonalds 1.2
+University YueGang 2.0
+University YeLaiXiang 3.5
+LaoWangHome ChuanWeiXuan 0.8
+LaoWangHome McDonalds 0.5
+ChuanWeiXuan ChongQingHotPot 1.2
+ChuanWeiXuan YueGang 0.6
+Vienna HeFeng 0.9
+ChongQingHotPot YeLaiXiang 1.5
+HeFeng McDonalds 0.7
+McDonalds YueGang 1.0
+YueGang YeLaiXiang 1.8
