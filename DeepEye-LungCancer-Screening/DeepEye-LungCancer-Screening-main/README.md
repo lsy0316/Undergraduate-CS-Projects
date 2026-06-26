@@ -118,5 +118,3 @@ DeepEye-LungCancer-Screening/
 ├── templates/
 │   └── index.html
 └── results/
-
----
