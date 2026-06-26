@@ -41,6 +41,7 @@ Undergraduate-CS-Projects/
 ├── book_management_system/                        # 图书后台管理系统
 ├── Generative_mnist/                              # MNIST生成模型
 ├── DeepEye-LungCancer-Screening/                  # 肺癌早筛系统
+├── Cat and Dogs classification/                   # 猫狗分类项目
 │
 └── README.md
 ```
@@ -400,6 +401,36 @@ python scripts/train_cgan.py --epochs 50 --z-dim 100
 - 肺癌早期筛查
 - 医学影像辅助诊断
 - 医疗 AI 平台开发
+
+---
+
+### 🐱🐶 猫狗分类项目
+
+**项目类型**：深度学习课程实践
+
+**项目概述**：
+基于 PyTorch 实现的猫狗二分类任务，对比了 VGG16、ResNet18、ViT-B/16 三种预训练模型的迁移学习效果。
+
+**核心功能**：
+
+| 模型 | 架构 | 预训练权重 |
+|-----|------|-----------|
+| VGG16 | 卷积神经网络 | ImageNet |
+| ResNet18 | 残差网络 | ImageNet |
+| ViT-B/16 | Vision Transformer | ImageNet |
+
+**技术特点**：
+- 采用"冻结特征提取层 + 微调分类头"的迁移学习策略
+- 使用随机水平翻转、旋转、颜色抖动等数据增强
+- 训练集/验证集比例：80% / 20%
+- 自动生成训练曲线对比图
+
+**快速启动**：
+```bash
+cd "Cat and Dogs classification"
+unzip cat_dog.zip
+python cnn_classfication.py
+```
 
 ---
 
