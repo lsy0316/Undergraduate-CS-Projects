@@ -123,7 +123,6 @@ python scripts/train_gan.py --resume experiments/checkpoints/gan_last.pth
 
 - 使用 torchvision.utils.make_grid 保存图片网格到 experiments/samples/
 - 使用 matplotlib 保存 loss 曲线 PNG
-- 可选 TensorBoard：若本机安装 tensorboard 将自动启用；否则自动降级为仅保存 PNG
 
 ### 预训练 StyleGAN 采样（可选）
 - 需要先准备 NVLabs/stylegan2-ada-pytorch 的依赖（见 utils/stylegan.py 顶部说明）
@@ -153,21 +152,4 @@ python scripts/finetune_stylegan_celeba.py \
 ```bash
 python scripts/stylegan_sample.py --pkl ../model/ffhq.pkl --num 64 --trunc 0.7
 ```
-
-
-## 常见问题与建议
-- GAN 训练不稳定/崩塌：
-  - 尝试降低学习率或使用标签平滑（config.smooth_labels）
-  - 使用较大的 batch size（若显存允许）
-  - 固定随机种子，观察可复现性
-- AE 重构偏暗/偏亮：
-  - 若使用 BCEWithLogitsLoss，确保输入在 [0,1]；使用 MSELoss 可适配 [-1,1] 或 [0,1]
-- 初始化建议：使用 DCGAN 常用初始化或默认 kaiming/normal 即可
-
-## 兼容性
-- 以 PyTorch ≥ 2.0 / torchvision ≥ 0.15 / Python ≥ 3.9 为基线
-- 若您的环境版本不同，建议参考 requirements.txt 进行适配
-
-## 许可证
-MIT
 
