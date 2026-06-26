@@ -28,16 +28,19 @@
 ## 📂 仓库结构
 
 ```text
-Algorithm-questions
+Undergraduate-CS-Projects/
 │
 ├── 数据结构相关代码.cpp
 ├── 算法设计与分析相关代码.cpp
 ├── 程序设计基础相关代码.cpp
 ├── 美团餐馆.cpp
+├── Day1_递归算法.cpp
 │
-├── 校园管理系统/
-│
-├── book_management_system/
+├── Meituan Restaurant Recommendation System/    # 美团餐馆推荐系统
+├── college_management_system/                    # 智慧校园管理系统
+├── book_management_system/                        # 图书后台管理系统
+├── Generative_mnist/                              # MNIST生成模型
+├── DeepEye-LungCancer-Screening/                  # 肺癌早筛系统
 │
 └── README.md
 ```
@@ -332,6 +335,74 @@ npm run dev:all
 
 ---
 
+### 🧠 MNIST 生成模型
+
+**项目类型**：深度学习课程实践
+
+**项目概述**：
+基于 PyTorch 实现的 MNIST 数据集生成模型，包含 AutoEncoder (AE)、DCGAN 和条件生成对抗网络 (cGAN) 三种模型。
+
+**核心功能**：
+
+| 模型 | 功能描述 |
+|-----|---------|
+| AE | 自编码器，实现图像重构与特征压缩 |
+| DCGAN | 深度卷积生成对抗网络，生成手写数字图像 |
+| cGAN | 条件生成对抗网络，按类别生成指定数字 |
+
+**技术栈**：
+- PyTorch
+- torchvision
+- NumPy
+- Matplotlib
+
+**快速启动**：
+```bash
+pip install -r requirements.txt
+
+# 训练 AE
+python scripts/train_ae.py --epochs 20
+
+# 训练 GAN
+python scripts/train_gan.py --epochs 50 --z-dim 100
+
+# 训练 cGAN
+python scripts/train_cgan.py --epochs 50 --z-dim 100
+```
+
+---
+
+### 🫁 深眸远虑——肺癌早筛系统
+
+**项目类型**：医学影像 AI 系统
+
+**项目概述**：
+基于深度学习与计算机视觉技术的肺癌早期筛查系统，结合 PET-CT 医学影像数据，利用 Memba 模型对肺部异常区域进行智能分析。
+
+**核心功能**：
+
+| 功能 | 描述 |
+|-----|------|
+| 影像预处理 | PET-CT 数据读取、增强与标准化 |
+| 病灶识别 | 基于 Memba 模型的风险区域检测 |
+| 结果可视化 | 病灶区域标注与展示 |
+| 模型推理 | 端到端推理流程 |
+
+**技术栈**：
+- Python
+- PyTorch
+- OpenCV
+- SimpleITK
+- NiBabel
+- Flask / FastAPI
+
+**应用场景**：
+- 肺癌早期筛查
+- 医学影像辅助诊断
+- 医疗 AI 平台开发
+
+---
+
 ## 🛠 技术栈
 
 ### 编程语言
@@ -341,6 +412,7 @@ npm run dev:all
 - JavaScript
 - TypeScript
 - SQL
+- Python
 
 ### 开发工具
 
@@ -351,17 +423,28 @@ npm run dev:all
 ### 前端开发
 
 - Vue3
+- React
 - Vite
 - TailwindCSS
+- ECharts
 
 ### 后端开发
 
 - Node.js
 - Express
+- Flask / FastAPI
 
 ### 数据库
 
 - MySQL
+
+### 机器学习 / 深度学习
+
+- PyTorch
+- torchvision
+- NumPy
+- OpenCV
+- SimpleITK
 
 ---
 
