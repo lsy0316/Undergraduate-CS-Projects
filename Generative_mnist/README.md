@@ -168,33 +168,3 @@ python scripts/stylegan_sample.py --pkl ../model/ffhq.pkl --num 64 --trunc 0.7
 5. **断点续训**：支持从检查点恢复训练
 6. **可视化**：自动保存样本图片和 loss 曲线
 
----
-
-## 🔄 扩展方向
-
-1. **更多模型**：实现 VAE、WGAN、StyleGAN 等
-2. **条件扩展**：支持多条件生成（如手写风格）
-3. **数据增强**：添加更多数据预处理策略
-4. **指标评估**：添加 FID、IS 等生成质量指标
-5. **分布式训练**：支持多 GPU 训练
-6. **模型压缩**：实现模型量化和剪枝
-
----
-
-## 📝 学习要点
-
-1. **生成模型基础**：理解 AE、GAN、cGAN 的原理
-2. **PyTorch 实践**：掌握 PyTorch 模型定义和训练流程
-3. **卷积网络设计**：理解 DCGAN 的设计准则
-4. **条件生成**：学习如何向生成模型注入条件信息
-5. **训练技巧**：标签平滑、学习率调整等
-
----
-
-## 🔗 相关资源
-
-- 《生成对抗网络入门指南》- Ian Goodfellow
-- [PyTorch 官方文档](https://pytorch.org/docs/stable/)
-- [DCGAN 论文](https://arxiv.org/abs/1511.06434)
-- [cGAN 论文](https://arxiv.org/abs/1411.1784)
-
