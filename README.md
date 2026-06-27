@@ -30,12 +30,6 @@
 ```text
 Undergraduate-CS-Projects/
 │
-├── 数据结构相关代码.cpp
-├── 算法设计与分析相关代码.cpp
-├── 程序设计基础相关代码.cpp
-├── 美团餐馆.cpp
-├── Day1_递归算法.cpp
-│
 ├── Meituan Restaurant Recommendation System/    # 美团餐馆推荐系统
 ├── college_management_system/                    # 智慧校园管理系统
 ├── book_management_system/                        # 图书后台管理系统
@@ -71,7 +65,7 @@ Undergraduate-CS-Projects/
 - **查找算法**：二分查找、顺序查找
 - **图算法**：深度优先搜索（DFS）、广度优先搜索（BFS）、Dijkstra最短路径
 
-**示例代码片段：**
+**代码片段：**
 ```c
 // 顺序表插入操作
 void InsertList_Sq(SqList *L, int i, int e) {
@@ -117,7 +111,7 @@ void InsertList_Sq(SqList *L, int i, int e) {
 
 ### 💻 程序设计基础
 
-本文件是 C 语言程序设计的基础练习代码，适合初学者入门学习。
+本文件是 C 语言程序设计的基础练习代码。
 
 **练习内容：**
 
